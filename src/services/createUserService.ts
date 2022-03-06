@@ -1,16 +1,32 @@
+import { getRepository } from 'typeorm';
+import { User } from '../entities/user';
+
 interface IUser {
     name: string,
-    age: number,
-    email: string
+    age?: number,
+    email?: string
+    id: string,
 }
 
 class createUserService{
-    execute({ name, age, email }: IUser){
-        const data = [];
+    async execute({ name, age, email, id }: IUser){
 
-        data.push({ name, age, email });
+        const user = await getRepository(User)
+            .createQueryBuilder()
+            .where("user.id = :id", { id: 1 })
+            .insert()
+            .into(User)
+            .values([
+                { 
+                    name: name,
+                    age: age,
+                    email: email,
+                    id: id
+                }
+            ])
+            .execute()
 
-        return data;
+        return user
     }
 }
 
