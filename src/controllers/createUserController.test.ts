@@ -25,7 +25,6 @@ describe('createUserController', () => {
         const request = {
             body: {
                 name: 'Any User',
-                age: 'Any Age',
                 email: 'email@email.com',
             } 
         } as Request;
@@ -39,7 +38,6 @@ describe('createUserController', () => {
         const request = {
             body: {
                 name: '',
-                age: 'Any age',
                 email: 'email@email.com',
             } 
         } as Request;
@@ -49,11 +47,10 @@ describe('createUserController', () => {
         expect(response.state.status).toBe(400);
     })
 
-    it('Deve retornar status 201 quando o email e a idade não forem informados', async () => {
+    it('Deve retornar status 201 quando o email não for informado', async () => {
         const request = {
             body: {
                 name: 'Any User',
-                age: '',
                 email: '',
             } 
         } as Request;

@@ -11,5 +11,5 @@ app.use(express.json());
 app.use(router);
 
 app.listen(8080, () =>{
-    console.log('Rodando')
+    console.log('Rodando Aplicação')
 });

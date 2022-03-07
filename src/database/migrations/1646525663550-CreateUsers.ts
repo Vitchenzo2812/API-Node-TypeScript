@@ -22,11 +22,6 @@ export class CreateUsers1646525663550 implements MigrationInterface {
                         name: 'email',
                         type: 'string',
                         isNullable: true
-                    },
-                    {
-                        name: 'age',
-                        type: 'number',
-                        isNullable: true
                     }
                 ]
             })

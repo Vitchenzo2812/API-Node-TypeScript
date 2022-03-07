@@ -10,9 +10,6 @@ class User {
     name: string;
     
     @Column()
-    age: number;
-
-    @Column()
     email: string;
 }
 

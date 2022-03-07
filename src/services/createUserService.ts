@@ -2,14 +2,13 @@ import { getRepository } from 'typeorm';
 import { User } from '../entities/user';
 
 interface IUser {
-    name: string,
-    age?: number,
-    email?: string
     id: string,
+    name: string,
+    email?: string
 }
 
 class createUserService{
-    async execute({ name, age, email, id }: IUser){
+    async execute({ name, email, id }: IUser){
 
         const user = await getRepository(User)
             .createQueryBuilder()
@@ -18,10 +17,9 @@ class createUserService{
             .into(User)
             .values([
                 { 
+                    id: id,
                     name: name,
-                    age: age,
-                    email: email,
-                    id: id
+                    email: email
                 }
             ])
             .execute()

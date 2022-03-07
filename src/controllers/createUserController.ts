@@ -8,11 +8,10 @@ class createUserController { //Cria um usuário
         const CreateUserService = new createUserService();
 
         const name = req.body.name;
-        const age = req.body.age;
         const email = req.body.email;
         const id = uuid();
 
-        const user = await CreateUserService.execute({ name, age, email, id });
+        const user = await CreateUserService.execute({ name, email, id });
 
         if(name.length === 0) { //Verifica se o nome está vazio
             return res.status(400).json({mensagem:`Informe o nome de usuário!`});
