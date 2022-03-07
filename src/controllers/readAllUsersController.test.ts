@@ -1,9 +1,9 @@
-import createConnection from '../database';
-import { readAllUsersController } from './readAllUsersController';
 import { getConnection } from 'typeorm';
-import { fakeData } from '../utils/fakeData/fakeData';
+import createConnection from '../database';
 import { makeMockRequest } from '../utils/mocks/mockRequest';
 import { makeMockResponse } from '../utils/mocks/mockResponse';
+import { readAllUsersController } from './readAllUsersController';
+import { fakeData } from '../utils/fakeData/fakeData';
 
 describe('readAllUsersController', () => {
     beforeAll(async () => {

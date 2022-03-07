@@ -8,7 +8,7 @@ interface IUser {
 }
 
 class createUserService{
-    async execute({ name, email, id }: IUser){
+    async execute({ id, name, email }: IUser){
 
         const user = await getRepository(User)
             .createQueryBuilder()

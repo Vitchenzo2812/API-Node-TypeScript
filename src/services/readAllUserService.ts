@@ -7,6 +7,7 @@ class readAllUserService{
             .createQueryBuilder('Users')
             .select()
             .getMany()
+            
 
         console.log(users)
         return users
